@@ -1,2 +1,2 @@
 # document-contracts
-Smart contracts for document-related operations of LoanEd.
+Smart contracts for document-related operations of Educado.
