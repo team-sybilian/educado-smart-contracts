@@ -1,2 +1,3 @@
-# document-contracts
-Smart contracts for document-related operations of Educado.
+# Educado Smart Contracts
+
+Smart contracts for Educado blockchain network.
