@@ -12,7 +12,7 @@ contract Document {
     }
 
     mapping (bytes32 => DocumentEntry) documentMapping;
-    event NewDocumentEntry(bytes32 _checksum, string _name, address indexed _setBy);
+    event NewDocumentEntry(bytes32 _checksum, string _name, uint _timestamp, address indexed _setBy);
     /**
      * Add a new entry to the ledger.
      *
@@ -29,7 +29,7 @@ contract Document {
         documentMapping[_checksum].isSet = true;
         documentMapping[_checksum].setBy = msg.sender;
         // Trigger event after entry has been created.
-        emit NewDocumentEntry(_checksum, _name, msg.sender);
+        emit NewDocumentEntry(_checksum, _name, _timestamp, msg.sender);
     }
     /**
      * Read an entry from the ledger.
