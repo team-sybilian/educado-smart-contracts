@@ -18,7 +18,7 @@ contract User {
      *
      * Example: 0x9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08, "Name", "Type", "1572506961"
      **/
-    function createUserEntry(bytes32 _checksum, string memory _name, string memory _class, uint _timestamp) public {
+    function createUserEntry(bytes32 _checksum, string memory _name, string memory _userType, uint _timestamp) public {
         // Check if the entry does not exists.
         require(!userMapping[_checksum].isSet, "User already exists.");
         // Set the default and input values of the entry.
@@ -29,7 +29,7 @@ contract User {
         userMapping[_checksum].isSet = true;
         userMapping[_checksum].setBy = msg.sender;
         // Trigger event after entry has been created.
-        emit NewUserEntry(_checksum, _name, _class, _timestamp, msg.sender);
+        emit NewUserEntry(_checksum, _name, _userType, _timestamp, msg.sender);
     }
     /**
      * Read an entry from the ledger.
