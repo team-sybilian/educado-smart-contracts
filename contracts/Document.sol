@@ -1,7 +1,6 @@
- pragma solidity >=0.4.24 <0.6.0;
+pragma solidity >=0.4.24 <0.6.0;
 
 contract Document {
-
     struct DocumentEntry {
         string checksum;
         string name;
@@ -19,7 +18,8 @@ contract Document {
         // Check if the document exists.
         require(documentMapping[_checksum].isSet, "Document does not exists.");
         // Return document.
-        return(documentMapping[_checksum].checksum, documentMapping[_checksum].name, documentMapping[_checksum].comment, documentMapping[_checksum].setBy);
+        return(documentMapping[_checksum].checksum, documentMapping[_checksum].name,
+            documentMapping[_checksum].comment,documentMapping[_checksum].setBy);
     }
 
     /**
